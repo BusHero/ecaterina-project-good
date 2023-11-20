@@ -31,7 +31,7 @@
 
 /////////////////////////////////////////////
 // Are you using a multiplexer?
-#define USING_MUX 1 //* comment if not using a multiplexer, uncomment if using it.
+// #define USING_MUX 1 //* comment if not using a multiplexer, uncomment if using it.
 
 /////////////////////////////////////////////
 // Are you using encoders?
@@ -103,9 +103,9 @@ const int BUTTON_ARDUINO_PIN[N_BUTTONS] = {7, 8, 9, 10, 11}; //* pins of each bu
 int BUTTON_NN[N_BUTTONS] = {15, 20}; //* Add the NOTE NUMBER of each button/switch you want
 #endif
 
-// #define USING_BUTTON_CC_N 1 //* comment if not using BUTTON CC, uncomment if using it.
+#define USING_BUTTON_CC_N 1 //* comment if not using BUTTON CC, uncomment if using it.
 #ifdef USING_BUTTON_CC_N // if using button with CC
-int BUTTON_CC_N[N_BUTTONS] = {80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90}; //* Add the CC NUMBER of each button/switch you want
+int BUTTON_CC_N[N_BUTTONS] = {83, 89, 90, 91, 92}; //* Add the CC NUMBER of each button/switch you want
 #endif
 
 //#define USING_TOGGLE 1 //* comment if not using BUTTON TOGGLE mode, uncomment if using it.
@@ -115,7 +115,7 @@ int BUTTON_CC_N[N_BUTTONS] = {80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90}; //* A
 const int N_BUTTONS_PER_MUX[N_MUX] = {0, 6}; //* number of buttons in each mux (in order)
 const int BUTTON_MUX_PIN[N_MUX][16] = { //* pin of each button of each mux in order
 {}, //* pins of the first mux
-{10, 11, 12, 13, 14, 15} //* pins of the second
+{5, 4, 3, 2, 1, 0} //* pins of the second
 // ...
 };
 #endif
@@ -141,7 +141,7 @@ const int N_POTS = 16 + 10 + 0; //* total numbers of pots (slide & rotary). Numb
 const int N_POTS_ARDUINO = 0; //* number of pots connected straight to the Arduino
 const int POT_ARDUINO_PIN[N_POTS_ARDUINO] = {}; //* pins of each pot connected straight to the Arduino
 
-#define USING_CUSTOM_CC_N 1 //* comment if not using CUSTOM CC NUMBERS, uncomment if using it.
+// #define USING_CUSTOM_CC_N 1 //* comment if not using CUSTOM CC NUMBERS, uncomment if using it.
 #ifdef USING_CUSTOM_CC_N
 int POT_CC_N[N_POTS] = {14, 15, 5, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 74, 29, 73, 71, 30, 31, 32, 33, 34, 7}; // Add the CC NUMBER of each pot you want
 #endif
