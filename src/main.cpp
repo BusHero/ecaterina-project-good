@@ -15,8 +15,7 @@
 
   If you are using for anything that's not for personal use don't forget to give credit.
 
-  PS: Just change the value that has a comment like " //* "
-
+  PS: Just change the value that has a comment like this "//*" and you are good to go.
 */
 
 /////////////////////////////////////////////
@@ -28,7 +27,7 @@
 // "DEBUG" if you just want to debug the code in the serial monitor
 // you don't need to comment or uncomment any MIDI library below after you define your board
 
-#define ATMEGA32U4 1//* put here the uC you are using, like in the lines above followed by "1", like "ATMEGA328 1", "DEBUG 1", etc.
+#define ATMEGA328 1 //* put here the uC you are using, like in the lines above followed by "1", like "ATMEGA328 1", "DEBUG 1", etc.
 
 /////////////////////////////////////////////
 // Are you using a multiplexer?
@@ -36,21 +35,19 @@
 
 /////////////////////////////////////////////
 // Are you using encoders?
-#define USING_ENCODER 1 //* comment if not using encoders, uncomment if using it.
+// #define USING_ENCODER 1 //* comment if not using encoders, uncomment if using it.
 
 /////////////////////////////////////////////
 // LIBRARIES
 // -- Defines the MIDI library -- //
-#define ATMEGA328
 // if using with ATmega328 - Uno, Mega, Nano...
 #ifdef ATMEGA328
 #include <MIDI.h>
 MIDI_CREATE_DEFAULT_INSTANCE();
 
 // if using with ATmega32U4 - Micro, Pro Micro, Leonardo...
-// #elif ATMEGA32U4
-// #include "MIDIUSB.h"
-
+#elif ATMEGA32U4
+#include "MIDIUSB.h"
 #endif
 // ---- //
 
@@ -225,7 +222,7 @@ void setup() {
   // Baud Rate
   // use if using with ATmega328 (uno, mega, nano...)
   // 31250 for MIDI class compliant | 115200 for Hairless MIDI
-  Serial.begin(31250); //*
+  Serial.begin(115200); //*
 
 #ifdef DEBUG
 Serial.println("Debug mode");
@@ -234,7 +231,8 @@ Serial.println();
 
   // Buttons
   // Initialize buttons with pull up resistors
-  for (int i = 0; i < N_BUTTONS_ARDUINO; i++) {
+  for (int i = 0; i < N_BUTTONS_ARDUINO; i++)
+  {
     pinMode(BUTTON_ARDUINO_PIN[i], INPUT_PULLUP);
   }
 
@@ -248,7 +246,8 @@ pinMode(BUTTON_ARDUINO_PIN[pin13index], INPUT);
 #ifdef USING_MUX
 
   // Initialize the multiplexers
-  for (int i = 0; i < N_MUX; i++) {
+  for (int i = 0; i < N_MUX; i++)
+  {
     mux[i].begin();
   }
   //* Set each X pin as input_pullup (avoid floating behavior)
