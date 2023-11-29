@@ -60,7 +60,7 @@ const int POT_ARDUINO_PIN[N_POTS_ARDUINO] = {}; //* pins of each pot connected s
 #define USING_CUSTOM_CC_N 1 //* comment if not using CUSTOM CC NUMBERS, uncomment if using it.
 
 int POT_CC_N[N_POTS] = {13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 
-                        29, 30, 31, 32, 33, 34, 35, 36, 37, 38}; // Add the CC NUMBER of each pot you want
+                        29, 30, 31, 12, 33, 34, 35, 36, 37, 38}; // Add the CC NUMBER of each pot you want
 
 const int N_POTS_PER_MUX[N_MUX] = {16, 10}; //* number of pots in each multiplexer (in order)
 const int POT_MUX_PIN[N_MUX][16] =
